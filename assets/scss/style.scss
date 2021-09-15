@@ -1,0 +1,11 @@
+@use 'font';
+@use 'reset';
+
+@use 'variables' as *;
+
+p{
+    color: $color-main;
+}
+body{
+    font-family: poppins, sans-serif;
+}
