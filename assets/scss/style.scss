@@ -1,11 +1,84 @@
+
+
+// p{
+//     color: $color-main;
+// }
+// body{
+//     font-family: poppins, sans-serif;
+// }
+// .wrapper{
+//     @include mixins.flex ();
+// }
+// p{
+//     font-size: 40px;
+//     @include mixins.adaptive(tablet){
+//         font-size: 30px;
+//     }
+//     @include mixins.adaptive(smartphone){
+//         font-size: 24px;
+//         color: black;
+//     }
+// }
+
+
 @use 'font';
 @use 'reset';
-
+@use 'mixins';
 @use 'variables' as *;
 
-p{
-    color: $color-main;
-}
 body{
-    font-family: poppins, sans-serif;
+    font-family: poppins;
+
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+._container{
+    max-width: $container-size;
+    margin-inline: auto;
+}
+.logo{
+    font-size: 28px;
+    font-weight: $weight-bold;
+    color: $color-main;
+    text-transform: uppercase;
+
+}
+.header{
+    background-color: #fff;
+
+    &__body{
+        height: 83px;
+        @include mixins.flex(center, space-between)
+    }
+    
+    &__menu{
+        flex-basis: (527px / $container-size) * 100%;
+    }
+
+    &__list{
+        @include mixins.flex(center, space-between)
+    }
+    
+&__link{
+    color: $color-main;
+    font-size: $size-secondary;
+}
+
+&__features{
+    @include mixins.flex(center)
+
+}
+&__icons{
+    @include mixins.flex(center, center);
+    font-size: $size-secondary;
+    color: $color-main;
+
+    &:not(:first-child){
+        margin-left: 35px;
+    }
+}
 }
